@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked list</title>
+</head>
+<script>
+    class LinkedList {
+    constructor(head = null) {
+        this.head = head
+    }
+    
+}
+
+    class Node {
+    constructor(data) {
+        this.data = data
+        this.next = null                
+    }
+
+    appendNode(newNode){
+    let node = this.head;
+    if(node==null){
+        //Means it's just empty list
+        this.head = newNode;
+        return;
+    }
+    while (node.next) {
+        node = node.next;
+    }
+    node.next = newNode;
+}
+}
+
+let myList = new LinkedList();
+let node = new Node(5);
+
+// myList.appendNode(node);
+// myList.appendNode(new Node(11));
+node.appendNode(7);
+// myList.printList();
+console.log(myList)
+console.log(node)
+
+// let list = new Node("1")
+// console.warn(list)
+</script>
+<body>
+    <center>
+        <h1>Linked list in javascript 1</h1>
+    </center>
+</body>
+</html>

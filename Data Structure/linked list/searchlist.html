@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<script>
+    class Node {
+        constructor(val) {
+            this.data = val;
+            this.next = null;
+        }
+    }
+
+    // Linked list class
+    // Head of list
+    var head;
+
+    // Inserts a new node at the front 
+    // of the list
+    function push(new_data) {
+        // Allocate new node and putting data
+        var new_node = new Node(new_data);
+
+        // Make next of new node as head
+        new_node.next = head;
+
+        // Move the head to point to new Node
+        head = new_node;
+    }
+
+    // Checks whether the value x is present
+    // in linked list
+    function search(head, x) {
+        // Base case
+        if (head == null)
+            return false;
+
+        // If key is present in current node,
+        // return true
+        if (head.data == x)
+            return true;
+
+        // Recur for remaining list
+        return search(head.next, x);
+    }
+
+    // Driver code
+
+    // Start with the empty list
+    // Use push() to construct list 
+    // 14->21->11->30->10
+    push(10);
+    push(30);
+    push(11);
+    push(21);
+    push(14);
+
+    if (search(head, 21))
+        document.write("Yes");
+    else
+        document.write("No");
+
+
+
+
+
+
+</script>
+
+<body>
+    <h2>search linked list with element or value</h2>
+</body>
+
+</html>
